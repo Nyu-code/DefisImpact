@@ -28,6 +28,20 @@ public class ODD {
     }
     
     public void setListeSsODD(ArrayList <SousODD> liste){
-        this.listeSsoDD = liste;
+        this.listeSsODD = liste;
     }
+
+    public void ajouterSosODD(SousODD ssODD){
+        this.listeSsODD.add(ssODD);
+    }
+
+    public void supprimerSousODD(SousODD ssODD){
+        for(SousODD sousodd:listeSsODD){
+            if(sousodd.getId() == ssODD.getId()){
+              this.listeSsODD.remove(ssODD); 
+              break;
+            }
+        }
+    }
+
 }
