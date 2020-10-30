@@ -1,11 +1,14 @@
+import java.util.ArrayList;
 
 public class ODD {
 	private String rep;
-	private int id;
-	
-	public ODD(String r, int i) {
+    private int id;
+    private ArrayList <SousODD> listeSsoDD;
+
+	public ODD(String r, int i,ArrayList <SousODD> liste) {
 		this.setRep(r);
-		this.setId(i);
+        this.setId(i);
+        this.setListeSsODD(liste);
 	}
 
 	public String getRep() {
@@ -22,5 +25,9 @@ public class ODD {
 
 	public void setId(int id) {
 		this.id = id;
-	}
+    }
+    
+    public void setListeSsODD(ArrayList <SousODD> liste){
+        this.listeSsoDD = liste;
+    }
 }
