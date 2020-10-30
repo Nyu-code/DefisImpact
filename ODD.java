@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class ODD {
 	private String rep;
     private int id;
-    private ArrayList <SousODD> listeSsoDD;
+    private ArrayList <SousODD> listeSsODD;
 
 	public ODD(String r, int i,ArrayList <SousODD> liste) {
 		this.setRep(r);
