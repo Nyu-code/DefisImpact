@@ -1,0 +1,46 @@
+/* Ajout des familles */
+@font-face { font-family: "moon"; src: url('../font/moon_get-Heavy.ttf'); }
+
+body {
+    margin:0;
+    padding:0;
+    background-color:#9dff9f;
+}
+
+main {
+    display:flex;
+    font-family:"calibri";
+}
+
+/* Titre : Defis Impact */
+header{
+    font-family:"moon";
+    text-shadow: #3b2c1e 0px 0px 6px;
+    text-align:center;
+    color:rgb(255, 153, 0);
+    font-size: 2em;
+    margin:0px;
+}
+
+#droite {
+    width: 50%;
+    height: auto;
+    background-color:#9dff9f;
+}
+
+#gauche {
+    padding:10px;
+    width: 50%;
+    height: auto;
+    background-color: #d0ffdb;
+}
+
+#sdg {
+    margin-left:20px;
+}
+
+/* Stylisation des SDG */
+#sdg form div {
+    margin-left:10px;
+    margin-bottom:5px;
+}
