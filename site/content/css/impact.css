@@ -39,8 +39,13 @@ header{
     margin-left:20px;
 }
 
+#sdg p {
+    margin-left:5px;
+    margin-bottom:5px;
+}
+
 /* Stylisation des SDG */
 #sdg form div {
-    margin-left:10px;
+    margin-left:5px;
     margin-bottom:5px;
 }
