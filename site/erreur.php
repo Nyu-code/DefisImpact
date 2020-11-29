@@ -1,5 +1,7 @@
 <?php require_once "begin.html"; ?>
 
-<h3>Page introuvable</h3>
+<div id="erreur">
+    <h3>Page introuvable</h3>
+</div>
 
 <?php require_once "end.html"; ?>
