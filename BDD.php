@@ -49,7 +49,6 @@ class BDD {
 		$inds["ind_cerise"] = pg_fetch_all($req_cerise);
 
 		return $inds;
-
 	}
 
 	public function get_inds_par_odd_et_cat($odd, $cat){
@@ -72,14 +71,14 @@ class BDD {
 
 		$req_cerise = pg_query_params($this->bd, 'SELECT * FROM ind_cerise WHERE sdg = $1 and indicator_field = $2', array($odd, $cat));
 
-		$inds["ind_rise"] = pg_fetch_all($req_cerise);
+		$inds["ind_cerise"] = pg_fetch_all($req_cerise);
 
 		return $inds;
 	}
 
-	public function get_inds_par_mot_cles($mots_cles, $tab = null){
+	public function get_inds_par_mot_cles($mots_cles, $tab_inds = null){
 		$res = [];
-		if ($tab == null){
+		if ($tab_inds === null){
 			$inds = [];
 			$req_sdg = pg_query($this->bd, 'SELECT * FROM ind_sdg');
 
@@ -99,7 +98,7 @@ class BDD {
 
 			// $req_cerise = pg_query($this->bd, 'SELECT * FROM ind_cerise');
 
-			// $inds["ind_rise"] = pg_fetch_all($req_cerise);
+			// $inds["ind_cerise"] = pg_fetch_all($req_cerise);
 
 			foreach ($inds as $c => $v){
 				$res[$c] = []; 
@@ -115,7 +114,8 @@ class BDD {
 			}
 		} 
 		else {
-			foreach ($tab as $c => $v){
+			foreach ($tab_inds as $c => $v){
+				$res[$c] = [];                                                                                                                    
 				foreach ($v as $c2 => $v2){
 					foreach ($v2 as $c3 => $v3) {
 						foreach ($mots_cles as $k => $mot) {
@@ -128,6 +128,38 @@ class BDD {
 			}
 		}
 		return $res;
+	}
+
+	public function get_inds_sdg_compass_business_theme($theme){
+
+		$req_sdg_compass = pg_query_params($this->bd, 'SELECT * FROM ind_sdg_compass WHERE business_theme = $1', array($theme));
+
+		return pg_fetch_all($req_sdg_compass);
+	}
+
+	public function get_inds_sdg_compass_type($type){
+
+		$req_sdg_compass = pg_query_params($this->bd, 'SELECT * FROM ind_sdg_compass WHERE type = $1', array($type));
+
+ 		return pg_fetch_all($req_sdg_compass);
+	}
+
+	public function get_inds_indicator_parametor($ind_param){
+		$inds = [];
+
+		$req_cerise_et_iris = pg_query_params($this->bd, 'SELECT * FROM ind_cerise_et_iris WHERE indicator_parameter = $1', array($ind_param));
+
+		$inds["ind_cerise_et_iris"] = pg_fetch_all($req_cerise_et_iris);
+
+		$req_iris = pg_query_params($this->bd, 'SELECT * FROM ind_iris WHERE indicator_parameter = $1', array($ind_param));
+
+		$inds["ind_iris"] = pg_fetch_all($req_iris);
+
+		$req_cerise = pg_query_params($this->bd, 'SELECT * FROM ind_cerise WHERE indicator_parameter = $1', array($ind_param));
+
+		$inds["ind_cerise"] = pg_fetch_all($req_cerise);
+
+		return $inds;
 	}
 
 }
