@@ -12,6 +12,13 @@ main {
     font-family:"calibri";
 }
 
+#erreur {
+    text-align:center;
+    font-size: 2em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 /* Titre : Defis Impact */
 header{
     font-family:"moon";
