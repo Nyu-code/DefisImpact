@@ -1,4 +1,7 @@
 <?php
+//Faites pas attention à ca c'est juste un fichier pour faire des tests
+
+
 
 include('BDD.php');
 include('ODDManager.php');
